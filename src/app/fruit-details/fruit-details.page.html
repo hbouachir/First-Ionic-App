@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+
+    </ion-buttons>
+    <ion-title>Fruit-Details</ion-title>
+
+    <ion-button fill="outline" slot="end" color="danger" (click)="deleteFruit()">
+      <ion-icon name="trash-outline" color="danger"></ion-icon>
+      Delete</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-grid>
+     <ion-row>
+       <ion-col>  <ion-img [src]="loadedFruit.image"></ion-img>
+       </ion-col>
+     </ion-row>
+     <ion-row >
+      <ion-col>
+         <h1>{{loadedFruit.name}}</h1>
+
+
+      </ion-col>
+      <ion-col>
+
+        <ion-button (click)="addToCart()" color="success">
+          <ion-icon name="cart-outline"></ion-icon>
+          Add Cart
+        </ion-button>
+      </ion-col>
+
+
+
+    </ion-row>
+
+
+   </ion-grid>
+</ion-content>

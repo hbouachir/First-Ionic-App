@@ -1,20 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar color="secondary">
     <ion-title>
-      Blank
+      Hello World
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+    <ion-card-header>
+
+      <ion-card-title>Fruits list</ion-card-title>
+    </ion-card-header>
+    <ion-card *ngFor="let fruit of fruit" [routerLink]="['/home',fruit.id]">
+
+
+      <ion-item>
+        <ion-avatar slot="start">
+
+          <ion-img src={{fruit.image}}></ion-img>
+        </ion-avatar>
+        <ion-icon name="pin" slot="end"></ion-icon>
+        <ion-label>{{fruit.name}}</ion-label>
+        <ion-button fill="outline" slot="end">
+          <ion-icon name="eye-outline"></ion-icon>
+          View</ion-button>
+
+      </ion-item>
+
+
+    </ion-card>
+
+    <ion-row>
+      <ion-col  offset="3" >
+        <h3>Total price: {{prixtotal}}</h3>
+      </ion-col>
+
+    </ion-row>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
 </ion-content>
